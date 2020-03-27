@@ -1,3 +1,3 @@
 Game project developed using Unity.
 
-[[,/unity.jpg]]
+[[./unity.jpg]]
