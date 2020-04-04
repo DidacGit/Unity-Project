@@ -42,6 +42,7 @@ public class Ship : Enemy
 
             Vector3 r = new Vector3(0.0f, rotationY, rotationZ);
             transform.rotation = Quaternion.Euler(r);
+
             //para disparar
             myTimer -= Time.deltaTime;
 
