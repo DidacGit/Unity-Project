@@ -5,11 +5,19 @@ using UnityEngine;
 public class PlayerBox : MonoBehaviour
 {
     public Rigidbody rb;
-
     public float velocity = 2000f;
-    // Update is called once per frame
+    private SceneManager sceneManager;
+
+    private void Start()
+    {
+        sceneManager = FindObjectOfType<SceneManager>();
+    }
     void Update()
     {
-        rb.AddForce(new Vector3(0, 0, velocity * Time.deltaTime), ForceMode.Force);
+        if (sceneManager.started)
+        {
+            //rb.AddForce(new Vector3(0, 0, velocity * Time.deltaTime), ForceMode.Force);
+            rb.velocity = new Vector3(0, 0, velocity);
+        }
     }
 }

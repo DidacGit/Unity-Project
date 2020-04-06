@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4352267153158902}
   - component: {fileID: 33396990863127720}
   - component: {fileID: 23433015480376818}
+  - component: {fileID: 8217882546591038685}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -80,6 +81,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8217882546591038685
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520627223689490}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: d7fcbff04d2a74555be8772f47c0f0de, type: 3}
 --- !u!1 &1542112843390278
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749628a281af8464d91dc2776f085d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crashDamage: 1
+  crashDamage: 20
   damageOnDestroy: 0
   player: {fileID: 0}
   playerTransform: {fileID: 0}

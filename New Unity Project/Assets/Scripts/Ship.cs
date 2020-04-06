@@ -32,7 +32,8 @@ public class Ship : Enemy
             //Dirigirse hacia
             direction = transform.position - playerTransform.position;
             direction.Normalize();
-            transform.position = Vector3.Lerp(transform.position, playerTransform.position, lerpVelocity);
+            transform.position = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, transform.position.z),
+                new Vector3(playerTransform.position.x, playerTransform.position.y, transform.position.z), lerpVelocity);
 
             //https://www.youtube.com/watch?v=7-8nE9_FwWs TUTORIAL ROTAR DIRECCTION
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AsteroidController : MonoBehaviour
+public class AsteroidController : Enemy
 {
     public float speed = 50.0f;
     private float x, y, z;
@@ -18,7 +18,7 @@ public class AsteroidController : MonoBehaviour
     void Update()
     {
 
-        //transform.Rotate(Vector3.one * speed * Time.deltaTime); 
+        //transform.Rotate(Vector3.one * horizontalSpeed * Time.deltaTime); 
         transform.Rotate(multiplyer * speed * Time.deltaTime);
     }
 }

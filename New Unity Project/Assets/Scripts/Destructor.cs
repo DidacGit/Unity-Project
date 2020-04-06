@@ -7,7 +7,7 @@ public class Destructor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger");
+        //Debug.Log("Trigger");
         Destroy(other.gameObject);
     }
 }

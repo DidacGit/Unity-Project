@@ -10,21 +10,26 @@ public class EnemyCreator : MonoBehaviour
     private GameObject enemyInScene; //To instantiate an object it is need to related with something
     public float targetTime = 5f;
     private float myTimer;
-
+    private SceneManager sceneManager;
     private void Start()
     {
         myTimer = targetTime;
+        sceneManager = FindObjectOfType<SceneManager>();
     }
     public void Update()
     {
-        //Crea un enemigo al finalizar myTime
-        myTimer -= Time.deltaTime;
-
-        if (myTimer <= 0.0f)
+        if (sceneManager.started) 
         {
-            SpawnAnEnemy();
-            myTimer = targetTime;
+            //Crea un enemigo al finalizar myTime
+            myTimer -= Time.deltaTime;
+
+            if (myTimer <= 0.0f)
+            {
+                SpawnAnEnemy();
+                myTimer = targetTime;
+            }
         }
+
     }
 
     void SpawnAnEnemy()

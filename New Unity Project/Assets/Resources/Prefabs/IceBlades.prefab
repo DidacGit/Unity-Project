@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49cf79755b448b24a9c4e92090219c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crashDamage: 1
+  crashDamage: 20
   damageOnDestroy: 0
   player: {fileID: 0}
   playerTransform: {fileID: 0}
@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 5055844550229692611}
   - component: {fileID: 5062253304372558911}
   - component: {fileID: 5073929427162067227}
+  - component: {fileID: 9146909553270673231}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -168,3 +169,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &9146909553270673231
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5061709998096897201}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 86e8b97b6d8d3465d851b89623a7dee3, type: 3}
