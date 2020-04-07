@@ -10,11 +10,11 @@ public class EnemyCreator : MonoBehaviour
     private GameObject enemyInScene; //To instantiate an object it is need to related with something
     public float targetTime = 5f;
     private float myTimer;
-    private SceneManager sceneManager;
+    private UserSceneManager sceneManager;
     private void Start()
     {
         myTimer = targetTime;
-        sceneManager = FindObjectOfType<SceneManager>();
+        sceneManager = FindObjectOfType<UserSceneManager>();
     }
     public void Update()
     {

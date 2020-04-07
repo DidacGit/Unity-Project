@@ -3,6 +3,7 @@
 public class PlayerMovement : MonoBehaviour {
 
     public int life = 100, ammo = 100;
+    public float score = 0;
     public DynamicJoystick joystick;
     public Rigidbody rb;
     public float horizontalSpeed;
@@ -12,11 +13,11 @@ public class PlayerMovement : MonoBehaviour {
     public Transform firePoint;
     public float bulletSpeed;
     public Animator animator;
-    private SceneManager sceneManager;
+    private UserSceneManager sceneManager;
     //private bool canMove = true;
     private void Start()
     {
-        sceneManager = FindObjectOfType<SceneManager>();
+        sceneManager = FindObjectOfType<UserSceneManager>();
         playerBox = FindObjectOfType<PlayerBox>();
     }
     private void Update()
@@ -61,24 +62,46 @@ public class PlayerMovement : MonoBehaviour {
             {
                 fireBullet();
             }
+            score = score + Time.deltaTime;
         }
 
     }
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Trigger");
-        Enemy enemy =  other.GetComponentInParent<Enemy>();
-        life -= enemy.crashDamage; // life = life - enemy.crashDamage;
-        //Destroy(other.gameObject);
+        //Intentamos almacenar el componente Enemy en una variable (Esto dará null si el componente es un FirstAidKit o Ammunition
+        Enemy enemy = other.GetComponentInParent<Enemy>();
+        //Si no es null
+        if (enemy != null)
+        {
+            life -= enemy.crashDamage; // life = life - enemy.crashDamage;
+            enemy.Crash();
+        }
+        //Intentamos almacenar el componente FirstAid en una variable
+        PowerUp powerUp = other.GetComponentInParent<PowerUp>();
+        //Si no es null
+        if (powerUp != null)
+        {
+            life += powerUp.life;
+            ammo += powerUp.ammo;
+            Destroy(other.gameObject);
+        }
     }
-
     public void fireBullet()
     {
-        GameObject b = Instantiate(bulletPrefab) as GameObject;
-        b.transform.position = firePoint.transform.position; // mirar si poner en otro punto 
-        //b.transform.rotation = Quaternion.Euler(_rotation);
-        bulletSpeed += playerBox.velocity;
-        b.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 1) * (bulletSpeed);
+        if (ammo > 0)
+        {
+            ammo -= 1;
+            GameObject b = Instantiate(bulletPrefab) as GameObject;
+            b.transform.position = firePoint.transform.position; // mirar si poner en otro punto 
+                                                                 //b.transform.rotation = Quaternion.Euler(_rotation);
+            bulletSpeed += playerBox.velocity;
+            b.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 1) * (bulletSpeed);
+        }
+        else
+        {
+            //Sonido de cartucho vacio
+        }
+        
     }
 
 }

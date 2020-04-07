@@ -141,6 +141,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crashDamage: 20
   damageOnDestroy: 0
+  firstAidkit: {fileID: 7260172747682591191, guid: d58d31ca65dab04489f16b763385da3c,
+    type: 3}
+  ammunition: {fileID: 4141423415950055544, guid: 8e49a60960a04734093d7ce9d899a3aa,
+    type: 3}
   player: {fileID: 0}
   playerTransform: {fileID: 0}
   lerpVelocity: 0.005

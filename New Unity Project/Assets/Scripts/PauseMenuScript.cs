@@ -9,6 +9,8 @@ public class PauseMenuScript : MonoBehaviour
     public static bool GameIsPaused = false;
     // The canvas that makes the pause menu
     public GameObject pauseMenuUI;
+    // The canvas that makes the die menu
+    public GameObject diedMenuUI;
 
     // Update is called once per frame
     void Update()
@@ -41,22 +43,28 @@ public class PauseMenuScript : MonoBehaviour
 
     public void LoadScores()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("ScoresMenu");
+        SceneManager.LoadScene("ScoresMenu");
     }
 
     public void LoadSettings()
     {
-        //SceneManager.LoadScene("ScoresMenu");
+        SceneManager.LoadScene("ScoresMenu");
     }
 
     public void LoadLevelBase()
     {
-        //SceneManager.LoadScene("LevelBase");
+        SceneManager.LoadScene("LevelBase");
     }
 
     public void LoadMainMenu()
     {
-        //SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void LoadDiedMenu()
+    {
+        diedMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
     }
 
     public void ExitGame()

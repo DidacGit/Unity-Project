@@ -6,11 +6,11 @@ public class PlayerBox : MonoBehaviour
 {
     public Rigidbody rb;
     public float velocity = 2000f;
-    private SceneManager sceneManager;
-
+    private UserSceneManager sceneManager;
+    
     private void Start()
     {
-        sceneManager = FindObjectOfType<SceneManager>();
+        sceneManager = FindObjectOfType<UserSceneManager>();
     }
     void Update()
     {
