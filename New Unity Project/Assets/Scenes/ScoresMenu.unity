@@ -255,7 +255,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SETTINGS MENU
+  m_Text: SCORES MENU
 --- !u!222 &829445542
 CanvasRenderer:
   m_ObjectHideFlags: 0

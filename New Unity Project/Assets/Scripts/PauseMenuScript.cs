@@ -41,7 +41,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void LoadScores()
     {
-        //SceneManager.LoadScene("ScoresMenu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("ScoresMenu");
     }
 
     public void LoadSettings()
