@@ -48,7 +48,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void LoadSettings()
     {
-        SceneManager.LoadScene("ScoresMenu");
+        SceneManager.LoadScene("SettingsMenu");
     }
 
     public void LoadLevelBase()
