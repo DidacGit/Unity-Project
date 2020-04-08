@@ -5,6 +5,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float liveTime = 4f;
+
+    public GameObject explosionEffect;
     private void OnTriggerEnter(Collider other)
     {
         //Intentamos almacenar el componente Enemy en una variable (Esto dará null si el componente es un FirstAidKit o Ammunition
@@ -12,7 +14,9 @@ public class Bullet : MonoBehaviour
         //Si no es null
         if (enemy != null)
         {
-            enemy.kill(); // life = life - enemy.crashDamage;
+            enemy.kill();
+            //At the same time the enemy dies, it explodes
+            Explode();
             Destroy(gameObject);
         }
     }
@@ -21,5 +25,11 @@ public class Bullet : MonoBehaviour
         if (liveTime < 0)
             Destroy(gameObject);
         liveTime -= Time.deltaTime;
+    }
+
+    void Explode()
+    {
+        //Show explosion effect
+        Instantiate(explosionEffect, transform.position, transform.rotation);
     }
 }
