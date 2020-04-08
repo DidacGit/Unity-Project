@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     public int crashDamage = 1;
     public bool damageOnDestroy = false;
+    public GameObject explosionEffect;
 
     public GameObject firstAidkit, ammunition;
     private void OnDestroy()
@@ -33,16 +34,16 @@ public class Enemy : MonoBehaviour
             //Lo rotamos para que nos mire
             g.transform.rotation = new Quaternion(180, 0, 0, 0);
         }
-        //Si el numero es 4, cramos un ammunition
+        //Si el numero es 4, creamos un ammunition
         if (r == 4)
         {
             GameObject g = Instantiate(ammunition) as GameObject;
             g.transform.position = transform.position;
             g.transform.rotation = new Quaternion(180, 0, 0, 0);
         }
-        
-        
 
+
+        Explode();
 
         //Por ultimo destruimos el objeto
         Destroy(gameObject);
@@ -50,7 +51,13 @@ public class Enemy : MonoBehaviour
     //Funcion que se llama al ser chocado contra player
     public void Crash()
     {
+        Explode();
         Destroy(gameObject);
+        
     }
-
+    void Explode()
+    {
+        //Show explosion effect
+        Instantiate(explosionEffect, transform.position, transform.rotation);
+    }
 }

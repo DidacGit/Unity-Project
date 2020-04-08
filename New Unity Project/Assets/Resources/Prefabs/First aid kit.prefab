@@ -60,6 +60,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 20
   ammo: 0
+  respawnEffect: {fileID: 1912731163003908, guid: c5febdd93ab44d640b3eb37b768360bb,
+    type: 3}
 --- !u!1 &7261044141113471725
 GameObject:
   m_ObjectHideFlags: 0

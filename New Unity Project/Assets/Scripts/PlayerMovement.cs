@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour {
     public float bulletSpeed;
     public Animator animator;
     private UserSceneManager sceneManager;
+
+    public GameObject respawnGreen;
+    public GameObject respawnRed;
+
     //private bool canMove = true;
     private void Start()
     {
@@ -75,6 +79,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             life -= enemy.crashDamage; // life = life - enemy.crashDamage;
             enemy.Crash();
+            animator.SetTrigger("damage");
         }
         //Intentamos almacenar el componente FirstAid en una variable
         PowerUp powerUp = other.GetComponentInParent<PowerUp>();
@@ -83,6 +88,20 @@ public class PlayerMovement : MonoBehaviour {
         {
             life += powerUp.life;
             ammo += powerUp.ammo;
+            if(powerUp.life != 0)
+            {
+                GameObject g = Instantiate(respawnRed) as GameObject;
+                g.transform.position = transform.position;
+                g.transform.rotation = new Quaternion(180, 0, 0, 0);
+                g.transform.SetParent(transform);
+            }
+            else if (powerUp.ammo != 0)
+            {
+                GameObject g = Instantiate(respawnGreen) as GameObject;
+                g.transform.position = transform.position;
+                g.transform.rotation = new Quaternion(180, 0, 0, 0);
+                g.transform.SetParent(transform);
+            }
             Destroy(other.gameObject);
         }
     }
@@ -94,8 +113,8 @@ public class PlayerMovement : MonoBehaviour {
             GameObject b = Instantiate(bulletPrefab) as GameObject;
             b.transform.position = firePoint.transform.position; // mirar si poner en otro punto 
                                                                  //b.transform.rotation = Quaternion.Euler(_rotation);
-            bulletSpeed += playerBox.velocity;
-            b.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 1) * (bulletSpeed);
+            b.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 1) * (bulletSpeed + playerBox.velocity);
+            animator.SetTrigger("shoot");
         }
         else
         {
