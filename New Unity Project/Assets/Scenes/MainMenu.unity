@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 306205105}
   - component: {fileID: 306205104}
   - component: {fileID: 306205103}
+  - component: {fileID: 306205106}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -343,6 +344,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &306205106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306205102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b480a34196640c043aaacbb398c4dd9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &576320909
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +438,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 306205106}
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -866,7 +879,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 306205106}
         m_MethodName: LoadSettings
         m_Mode: 1
         m_Arguments:
@@ -1094,7 +1107,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 306205106}
         m_MethodName: LoadScores
         m_Mode: 1
         m_Arguments:
@@ -1300,8 +1313,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Resume
+      - m_Target: {fileID: 306205106}
+        m_MethodName: LoadPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
