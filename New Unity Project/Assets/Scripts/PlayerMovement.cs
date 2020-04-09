@@ -18,11 +18,18 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject respawnGreen;
     public GameObject respawnRed;
 
+    public AudioClip gunSound;
+    public AudioClip powerSound;
+    AudioSource audioGun;
+    AudioSource upPower;
+
     //private bool canMove = true;
     private void Start()
     {
         sceneManager = FindObjectOfType<UserSceneManager>();
         playerBox = FindObjectOfType<PlayerBox>();
+        audioGun = GetComponent<AudioSource>();
+        upPower = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -94,6 +101,8 @@ public class PlayerMovement : MonoBehaviour {
                 g.transform.position = transform.position;
                 g.transform.rotation = new Quaternion(180, 0, 0, 0);
                 g.transform.SetParent(transform);
+                //upPower.clip = powerSound;
+                //upPower.Play();
             }
             else if (powerUp.ammo != 0)
             {
@@ -115,6 +124,8 @@ public class PlayerMovement : MonoBehaviour {
                                                                  //b.transform.rotation = Quaternion.Euler(_rotation);
             b.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 1) * (bulletSpeed + playerBox.velocity);
             animator.SetTrigger("shoot");
+            audioGun.clip = gunSound;
+            audioGun.Play();
         }
         else
         {
