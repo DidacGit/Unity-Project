@@ -11,7 +11,8 @@ public class Enemy : MonoBehaviour
 
     //public AudioClip explosionSound;
     //AudioSource audioExplosion;
-    public GameObject sonidoexplosion;
+    public GameObject explosionSoundSpace;
+    public GameObject explosionSoundPlayer;
 
     public GameObject firstAidkit, ammunition;
     //public void Start()
@@ -52,6 +53,7 @@ public class Enemy : MonoBehaviour
 
 
         Explode();
+        Instantiate(explosionSoundPlayer);
         //Audio de explosion
         //audioExplosion.clip = explosionSound;
         //audioExplosion.Play();
@@ -62,7 +64,7 @@ public class Enemy : MonoBehaviour
     public void Crash()
     {
         Explode();
-        //Instantiate(sonidoexplosion);
+        Instantiate(explosionSoundSpace);
         //audioExplosion.clip = explosionSound;
         //audioExplosion.Play();
         Destroy(gameObject);
@@ -73,6 +75,6 @@ public class Enemy : MonoBehaviour
     {
         //Show explosion effect
         Instantiate(explosionEffect, transform.position, transform.rotation);
-        Instantiate(sonidoexplosion);
+        //Instantiate(explosionSoundSpace);
     }
 }
