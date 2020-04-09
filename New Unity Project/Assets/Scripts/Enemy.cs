@@ -9,7 +9,15 @@ public class Enemy : MonoBehaviour
     public bool damageOnDestroy = false;
     public GameObject explosionEffect;
 
+    //public AudioClip explosionSound;
+    //AudioSource audioExplosion;
+    public GameObject sonidoexplosion;
+
     public GameObject firstAidkit, ammunition;
+    //public void Start()
+    //{
+    //    audioExplosion = GetComponent<AudioSource>();
+    //}
     private void OnDestroy()
     {
         //Esto se ejecuta en el destructor
@@ -44,7 +52,9 @@ public class Enemy : MonoBehaviour
 
 
         Explode();
-
+        //Audio de explosion
+        //audioExplosion.clip = explosionSound;
+        //audioExplosion.Play();
         //Por ultimo destruimos el objeto
         Destroy(gameObject);
     }
@@ -52,12 +62,17 @@ public class Enemy : MonoBehaviour
     public void Crash()
     {
         Explode();
+        //Instantiate(sonidoexplosion);
+        //audioExplosion.clip = explosionSound;
+        //audioExplosion.Play();
         Destroy(gameObject);
-        
+
+
     }
     void Explode()
     {
         //Show explosion effect
         Instantiate(explosionEffect, transform.position, transform.rotation);
+        Instantiate(sonidoexplosion);
     }
 }
