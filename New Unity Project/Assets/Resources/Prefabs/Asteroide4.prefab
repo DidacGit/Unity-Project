@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.602395, y: 1, z: 3.9294214}
-  m_Center: {x: -0.3065982, y: -3.6807668e-16, z: -0.08840108}
+  m_Size: {x: 2.602395, y: 3.6158962, z: 2.363037}
+  m_Center: {x: -0.3065982, y: -0.19037342, z: -0.4350891}
 --- !u!114 &1103284920820189574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +63,7 @@ MonoBehaviour:
   damageOnDestroy: 0
   explosionEffect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
     type: 3}
+  scoreIncrementator: 15
   explosionSoundSpace: {fileID: 3145354796523004984, guid: ec665923f9bcc8c4d99f7b9445f566b0,
     type: 3}
   explosionSoundPlayer: {fileID: 9082002734807586233, guid: 5aad4acd5d336ac4ca4021429ab35466,

@@ -5,4 +5,5 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     public int life, ammo;
+    public float scoreIncrementator = 0;
 }

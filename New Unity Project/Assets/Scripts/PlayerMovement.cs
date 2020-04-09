@@ -98,6 +98,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             life += powerUp.life;
             ammo += powerUp.ammo;
+            score += powerUp.scoreIncrementator;
             if(powerUp.life != 0)
             {
                 GameObject g = Instantiate(respawnRed) as GameObject;

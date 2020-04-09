@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class HudTextScript : MonoBehaviour
 {
-    public Transform playerPosition;
+    //public Transform playerScore;
     public PlayerMovement myPlayerMovement;
     public Text hudText;
-
+    PlayerMovement player;
     // Update is called once per frame
+    private void Start()
+    {
+        player = FindObjectOfType<PlayerMovement>();
+    }
     void Update()
     {
-        string hud = "Position: " + playerPosition.position.z.ToString("0") + "\n" +
+        string hud = "Score: " + player.score.ToString("0") + "\n" +
             "HP: " + myPlayerMovement.life + "\n" +
             "Ammo: " + myPlayerMovement.ammo;
         hudText.text = hud;

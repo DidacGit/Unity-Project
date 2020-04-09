@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public int crashDamage = 1;
     public bool damageOnDestroy = false;
     public GameObject explosionEffect;
+    public float scoreIncrementator = 0;
 
     //public AudioClip explosionSound;
     //AudioSource audioExplosion;
@@ -51,7 +52,8 @@ public class Enemy : MonoBehaviour
             g.transform.rotation = new Quaternion(180, 0, 0, 0);
         }
 
-
+        PlayerMovement p = FindObjectOfType<PlayerMovement>();
+        p.score += scoreIncrementator;
         Explode();
         Instantiate(explosionSoundPlayer);
         //Audio de explosion
@@ -71,7 +73,7 @@ public class Enemy : MonoBehaviour
 
 
     }
-    void Explode()
+    public void Explode()
     {
         //Show explosion effect
         Instantiate(explosionEffect, transform.position, transform.rotation);

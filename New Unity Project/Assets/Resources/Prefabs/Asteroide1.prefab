@@ -159,6 +159,7 @@ MonoBehaviour:
   damageOnDestroy: 0
   explosionEffect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
     type: 3}
+  scoreIncrementator: 15
   explosionSoundSpace: {fileID: 3145354796523004984, guid: ec665923f9bcc8c4d99f7b9445f566b0,
     type: 3}
   explosionSoundPlayer: {fileID: 9082002734807586233, guid: 5aad4acd5d336ac4ca4021429ab35466,

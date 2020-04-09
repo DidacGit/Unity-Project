@@ -41,7 +41,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7260172747682591191}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 83.32184, y: 62.94404, z: 55.498287}
@@ -60,8 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 20
   ammo: 0
-  respawnEffect: {fileID: 1912731163003908, guid: c5febdd93ab44d640b3eb37b768360bb,
-    type: 3}
+  scoreIncrementator: 10
 --- !u!1 &7261044141113471725
 GameObject:
   m_ObjectHideFlags: 0

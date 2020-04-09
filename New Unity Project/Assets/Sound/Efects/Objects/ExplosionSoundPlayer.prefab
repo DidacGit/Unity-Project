@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7026399227156357514}
   - component: {fileID: 1313931450341911225}
   m_Layer: 0
-  m_Name: explosionSoundPayer
+  m_Name: ExplosionSoundPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
