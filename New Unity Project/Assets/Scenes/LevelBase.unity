@@ -1232,6 +1232,11 @@ MonoBehaviour:
   camera: {fileID: 1678457470}
   colliderPlayer: {fileID: 1313478375}
   wonMenu: {fileID: 196449810}
+  wonSound: {fileID: 6076315493743807195, guid: b9ab8efb2b7ea3c438cf88a0fda92158,
+    type: 3}
+  pauseMusic: {fileID: 5309799889179814262, guid: d273eb83202ee85498bc5bec698df135,
+    type: 3}
+  muteMusic: {fileID: 738751429}
 --- !u!4 &563380121
 Transform:
   m_ObjectHideFlags: 0

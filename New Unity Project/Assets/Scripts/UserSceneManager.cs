@@ -19,6 +19,13 @@ public class UserSceneManager : MonoBehaviour
     public Transform camera;
     public MeshCollider colliderPlayer;
     public GameObject wonMenu;
+    public GameObject wonSound;
+    public GameObject pauseMusic;
+    public AudioSource muteMusic;
+
+    bool a = false;
+
+
 
     private bool ending = false;
     private void Start()
@@ -50,6 +57,12 @@ public class UserSceneManager : MonoBehaviour
         {
             wonMenu.SetActive(true);
             Time.timeScale = 0f;
+            if (a == false) {
+                muteMusic.mute = true;
+                Instantiate(pauseMusic);
+                a = true;
+            }
+          
         }
             
     }
@@ -61,7 +74,9 @@ public class UserSceneManager : MonoBehaviour
         camera.parent = null;
         timeGame = 0f;
         ending = true;
-
+        Instantiate(wonSound);
+        //muteMusic.mute = true; 
+        
         Enemy[] enemys = FindObjectsOfType<Enemy>();
 
         foreach (Enemy e in enemys)
