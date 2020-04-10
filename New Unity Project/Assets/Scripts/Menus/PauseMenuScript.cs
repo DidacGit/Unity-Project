@@ -67,6 +67,11 @@ public class PauseMenuScript : MonoBehaviour
         GameIsPaused = true;
     }
 
+    public void LoadNextLevel()
+    {
+        // TODO: change it when we have more levels
+        SceneManager.LoadScene("LevelsMenu");
+    }
     public void ExitGame()
     {
         Application.Quit();
