@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class UserSceneManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class UserSceneManager : MonoBehaviour
     public Transform camera;
     public MeshCollider colliderPlayer;
     public GameObject wonMenu;
+    public TMPro.TextMeshProUGUI wonMenuScore;
     public GameObject wonSound;
     public GameObject pauseMusic;
     public AudioSource muteMusic;
@@ -56,6 +58,7 @@ public class UserSceneManager : MonoBehaviour
         if (ending && timeGame >= 5f)
         {
             wonMenu.SetActive(true);
+            wonMenuScore.text = "SCORE: " + player.score.ToString("0");
             Time.timeScale = 0f;
             if (a == false) {
                 muteMusic.mute = true;
