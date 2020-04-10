@@ -1092,6 +1092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7982913711407917946}
   - component: {fileID: 7982118830979411862}
+  - component: {fileID: 923121210319507305}
   m_Layer: 0
   m_Name: Alien
   m_TagString: Untagged
@@ -1123,6 +1124,7 @@ Transform:
   - {fileID: 7982884331939018786}
   - {fileID: 7983052955300751536}
   - {fileID: 7982771241339053466}
+  - {fileID: 6094868142005362637}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1145,6 +1147,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &923121210319507305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7982028149601828874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 701ee6937fff3fa4ca3dd5ac903d3e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crashDamage: 1
+  damageOnDestroy: 0
+  explosionEffect: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9,
+    type: 3}
+  scoreIncrementator: 50
+  explosionSoundSpace: {fileID: 0}
+  explosionSoundPlayer: {fileID: 0}
+  firstAidkit: {fileID: 7260172747682591191, guid: d58d31ca65dab04489f16b763385da3c,
+    type: 3}
+  ammunition: {fileID: 4141423415950055544, guid: 8e49a60960a04734093d7ce9d899a3aa,
+    type: 3}
+  player: {fileID: 0}
+  playerTransform: {fileID: 0}
+  lerpVelocity: 0.005
+  direction: {x: 0, y: 0, z: 0}
+  bulletPrefab: {fileID: 7116272334857267220, guid: 6d0adb4c326bb204383fc75283a45f67,
+    type: 3}
+  bulletSpeed: 60
+  firePoint: {fileID: 7982028149601828874}
+  targetTime: 1
+  canShoot: 1
+  playerReached: 0
 --- !u!1 &7982046510127787574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,3 +1212,33 @@ Transform:
   m_Father: {fileID: 7982721842425236530}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 164.38, z: 0}
+--- !u!1 &8941447132251012762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6094868142005362637}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6094868142005362637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8941447132251012762}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7982913711407917946}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
