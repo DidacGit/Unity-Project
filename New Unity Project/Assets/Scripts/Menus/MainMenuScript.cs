@@ -15,7 +15,7 @@ public class MainMenuScript : MonoBehaviour
     }
     public void LoadPlay()
     {
-        SceneManager.LoadScene("LevelBase");
+        SceneManager.LoadScene("LevelsMenu");
     }
     public void ExitGame()
     {
