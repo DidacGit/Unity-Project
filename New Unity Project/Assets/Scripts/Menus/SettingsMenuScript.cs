@@ -11,10 +11,11 @@ public class SettingsMenuScript : MonoBehaviour
     public TextMeshProUGUI userName;
     public Slider slider;
     public Toggle toggle;
+    public GameObject settingsMenu;
     
     private void Start()
     {
-        
+        Debug.Log("START");
         userName.text = PlayerPrefsManager.getUserName();
         slider.value = PlayerPrefsManager.getVolume();
 
@@ -27,6 +28,16 @@ public class SettingsMenuScript : MonoBehaviour
     public void ChangeVolume()
     {
         PlayerPrefsManager.setVolume(slider.value);
+        try
+        {
+            UserSceneManager userSceneManager = FindObjectOfType<UserSceneManager>();
+            userSceneManager.SetOnMusic(slider.value, toggle.isOn);
+        }
+        catch (Exception e)
+        {
+
+        }
+        
     }
     public void ChangeMute()
     {
@@ -34,10 +45,19 @@ public class SettingsMenuScript : MonoBehaviour
             PlayerPrefsManager.setMute(1);
         else
             PlayerPrefsManager.setMute(0);
+
+        try
+        {
+            UserSceneManager userSceneManager = FindObjectOfType<UserSceneManager>();
+            userSceneManager.SetOnMusic(slider.value, toggle.isOn);
+        }
+        catch (Exception e)
+        {
+
+        }
     }
     public void ChangeName()
     {
-        
         if (userName.text.Equals("") || userName.text.Equals(" "))
         {
             userName.text = PlayerPrefsManager.getUserName();
@@ -46,6 +66,11 @@ public class SettingsMenuScript : MonoBehaviour
         {
             PlayerPrefsManager.setUserName(userName.text);
         }
+    }
+    public void SceneBackLevelBase()
+    {
+        // If we want it to be a real "back" button we have to change the SceneManager
+        settingsMenu.SetActive(false);
     }
     public void SceneBack()
     {

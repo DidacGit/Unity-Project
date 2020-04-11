@@ -77,7 +77,7 @@ public class UserSceneManager : MonoBehaviour
             if (!gameSaved)
             {
                 //Creamos una Score
-                Score myScore = new Score("user2", player.score);
+                Score myScore = new Score(PlayerPrefsManager.getUserName(), player.score);
                 //La añadimos a scoresCollection
                 scoresCollection.scores.Add(myScore);
                 //Lo guardamos en la ruta RootFolder y en el fichero scores.xml
@@ -86,12 +86,19 @@ public class UserSceneManager : MonoBehaviour
                 gameSaved = true;
             }
             
-
             if (backGroundMusicMute == false) {
                 muteMusic.mute = true;
                 Instantiate(pauseMusic);
                 backGroundMusicMute = true;
             }
+        }
+    }
+    public void SetOnMusic(float volume, bool mute)
+    {
+        if (backGroundMusicMute == false)
+        {
+            muteMusic.mute = mute;
+            muteMusic.volume = volume;
         }
     }
 

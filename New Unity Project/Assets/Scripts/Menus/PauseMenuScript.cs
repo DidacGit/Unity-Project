@@ -11,6 +11,12 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject pauseMenuUI;
     // The canvas that makes the die menu
     public GameObject diedMenuUI;
+    // The canvas that opens the scores menu
+    public GameObject scoresMenuUI;
+    // The canvas that opens the settings menu
+    public GameObject settingsMenuUI;
+
+    public GameObject pauseButton;
 
     // Update is called once per frame
     void Update()
@@ -32,23 +38,25 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        pauseButton.SetActive(true);
     }
     // Pause the game and show the pause menu
-    void Pause()
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        pauseButton.SetActive(false);
     }
 
     public void LoadScores()
     {
-        SceneManager.LoadScene("ScoresMenu");
+        scoresMenuUI.SetActive(true);
     }
 
     public void LoadSettings()
     {
-        SceneManager.LoadScene("SettingsMenu");
+        settingsMenuUI.SetActive(true);
     }
 
     public void LoadLevelBase()
@@ -74,6 +82,6 @@ public class PauseMenuScript : MonoBehaviour
     }
     public void ExitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 }
