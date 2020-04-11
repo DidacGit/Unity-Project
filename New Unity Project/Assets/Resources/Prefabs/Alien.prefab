@@ -808,6 +808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7982964633182374614}
   - component: {fileID: 8010816888654664166}
+  - component: {fileID: 5449105650022836144}
   m_Layer: 0
   m_Name: Boximon Cyclopes
   m_TagString: Untagged
@@ -900,6 +901,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.38704723, y: 0.02414462, z: -0.002753824}
     m_Extent: {x: 0.6672881, y: 0.34029874, z: 0.80777514}
   m_DirtyAABB: 0
+--- !u!64 &5449105650022836144
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7981416724732675238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &7981454459767335864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,8 +1191,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   bulletPrefab: {fileID: 7116272334857267220, guid: 6d0adb4c326bb204383fc75283a45f67,
     type: 3}
-  bulletSpeed: 60
-  firePoint: {fileID: 7982028149601828874}
+  bulletSpeed: 30
+  firePoint: {fileID: 8941447132251012762}
   targetTime: 1
   canShoot: 1
   playerReached: 0
@@ -1224,7 +1239,7 @@ GameObject:
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1236,7 +1251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8941447132251012762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.31}
+  m_LocalPosition: {x: 0, y: 0.529, z: 0.476}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7982913711407917946}
