@@ -11,6 +11,9 @@ public class PlayerBox : MonoBehaviour
     private void Start()
     {
         sceneManager = FindObjectOfType<UserSceneManager>();
+        PlayerPrefsManager playerPrefsManager = new PlayerPrefsManager();
+        //playerPrefsManager.setUserName("MI USUARIO");
+        //Debug.Log(playerPrefsManager.getUserName());
     }
     void Update()
     {

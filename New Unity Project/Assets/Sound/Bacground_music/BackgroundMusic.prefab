@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2907922442146933478}
   - component: {fileID: 2907922442146933477}
+  - component: {fileID: -6850441002591500032}
   m_Layer: 0
   m_Name: BackgroundMusic
   m_TagString: Untagged
@@ -127,3 +128,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6850441002591500032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2907922442146933476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296ecda2f68c3134bb54cba3732150d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAudio: {fileID: 2907922442146933477}

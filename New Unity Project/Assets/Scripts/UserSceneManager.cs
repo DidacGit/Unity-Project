@@ -26,22 +26,15 @@ public class UserSceneManager : MonoBehaviour
     public GameObject pauseMusic;                           //Prefab que accionará el sonido de pausa
     public AudioSource muteMusic;                           //Variable para parar la musica
     
-    bool backGroundMusicMute = false;                       //Variable que gestiona si los sonidos están muteados
-
-    public Text textComprobacion;                           //Texto utilizado para comprobar que se leen los ficheros xml
+    bool backGroundMusicMute = false;                       //Variable para limitar que el sonido de win solo suene una vez
 
     private bool ending = false;                            //Activa la animación final cuando esta acabando el nivel
     ScoresCollection scoresCollection;                      //Variable para cargar y guardar las scores en un fichero XML
     string rootFolder;                                      //Path donde se guardarán las scores
     bool gameSaved = false;                                 //Variable necesaria para que no guarde la nueva score a cada frame
+
     private void Start()
     {
-        //Funcionan perfectamente pero lo guardan en la carpeta raiz "New Unity Project" y no se verá desde android
-        //scoreCollection.Save("scores.xml"); 
-        //ScoresCollection scoreLoad = ScoresCollection.Load("scores.xml");
-
-        //Creamos una variable para poner el path
-        
         //Si estamos desde el editor de Unity cogera el path de la aplicación
 #if UNITY_EDITOR
         rootFolder = Application.dataPath;
@@ -50,8 +43,8 @@ public class UserSceneManager : MonoBehaviour
 #elif UNITY_ANDROID || UNITY_IOS
         rootFolder = Application.persistentDataPath;
 #endif
-
         scoresCollection = ScoresCollection.Load(Path.Combine(rootFolder, "scores.xml"));
+
         Time.timeScale = 0f;
        
     }
@@ -89,8 +82,6 @@ public class UserSceneManager : MonoBehaviour
                 scoresCollection.scores.Add(myScore);
                 //Lo guardamos en la ruta RootFolder y en el fichero scores.xml
                 scoresCollection.Save(Path.Combine(rootFolder, "scores.xml"));
-                //Lo representamos en textComprobación <<<<<<<<<<<<<<<<<<<<BORRAR>>>>>>>>>>>>>>>>>>>>>
-                textComprobacion.text = scoresCollection.ToString();
                 //Indicamos que ya se ha guardado para que en el siguiente frame no lo vuelva a hacer
                 gameSaved = true;
             }

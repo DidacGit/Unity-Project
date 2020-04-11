@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7332208242540389298}
   - component: {fileID: 5518657650332804415}
   - component: {fileID: 4133537330721042663}
+  - component: {fileID: 7512677740044673038}
   m_Layer: 0
   m_Name: WinSound
   m_TagString: Untagged
@@ -141,3 +142,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 2.2
+--- !u!114 &7512677740044673038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6076315493743807195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296ecda2f68c3134bb54cba3732150d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAudio: {fileID: 5518657650332804415}

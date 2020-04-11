@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class LevelsMenuScript : MonoBehaviour
 {
+    public int level = 0;
     // Start is called before the first frame update
     void Start()
     {
+        level = PlayerPrefsManager.getLevel();
         // Change the title colors here, when the completed levels' data is implemented
+
     }
 
     public void LoadLevel1()

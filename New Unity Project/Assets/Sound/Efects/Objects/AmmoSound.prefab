@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3055754961285109340}
   - component: {fileID: 2968817581508673862}
   - component: {fileID: 1118663491348813470}
+  - component: {fileID: 5797119103467056210}
   m_Layer: 0
   m_Name: AmmoSound
   m_TagString: Untagged
@@ -141,3 +142,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 2
+--- !u!114 &5797119103467056210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5872849962322119567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296ecda2f68c3134bb54cba3732150d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAudio: {fileID: 2968817581508673862}

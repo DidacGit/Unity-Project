@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+    private void Start()
+    {
+        PlayerPrefsManager.initialize();
+    }
     public void LoadScores()
     {
         SceneManager.LoadScene("ScoresMenu");
