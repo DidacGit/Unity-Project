@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class ScoresMenuScript : MonoBehaviour
 {
@@ -17,8 +18,9 @@ public class ScoresMenuScript : MonoBehaviour
 #elif UNITY_ANDROID || UNITY_IOS
         rootFolder = Application.persistentDataPath;
 #endif
-        scoresCollection = ScoresCollection.Load(Path.Combine(rootFolder, "scores.xml"));
-        //scoresCollection.scores.Sort(,,,);
+        List<Score> scores = ScoresCollection.Load(Path.Combine(rootFolder, "scores.xml")).scores;
+        List<Score> sortedScores = scores.OrderByDescending(o => o.value).ToList();
+        Debug.Log("Sorted scores: " + sortedScores[0].value.ToString() + " " + sortedScores[1].value.ToString());
     }
     public void LoadShowAll()
     {
