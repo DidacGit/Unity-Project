@@ -13,10 +13,11 @@ public class Alien : Enemy
     public float bulletSpeed = 60.0f;
 
     public GameObject firePoint;
-    public float targetTime = 0.5f;
+    public float targetTime = 0.5f;                                     //Time to shoot a bullet
     private float myTimer;
     public bool canShoot = false;
     public bool playerReached = false;
+    public float yScale;
 
     //public int xCorrector, yCorrector, zCorrector;
     private void Start()
@@ -24,6 +25,8 @@ public class Alien : Enemy
         player = FindObjectOfType<PlayerMovement>();
         playerTransform = player.GetComponent<Transform>();
         myTimer = targetTime;
+        yScale = transform.localScale.y;
+
     }
     private void Update()
     {
@@ -41,8 +44,16 @@ public class Alien : Enemy
             float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
             float rotationY = Mathf.Atan2(difference.x, difference.z) * Mathf.Rad2Deg;
 
-            Vector3 r = new Vector3(0.0f, rotationY, rotationZ);
+            Vector3 r = new Vector3(0.0f, rotationY, -rotationZ);
             transform.rotation = Quaternion.Euler(r);
+
+            //check if the plalyer it's on my left to fix the bug that makes this prefab to turn down
+            if (playerTransform.position.x < transform.position.x)
+                transform.localScale = new Vector3(transform.localScale.x, -yScale, transform.localScale.z);
+            else
+                transform.localScale = new Vector3(transform.localScale.x, yScale, transform.localScale.z);
+
+
 
             //para disparar
             myTimer -= Time.deltaTime;

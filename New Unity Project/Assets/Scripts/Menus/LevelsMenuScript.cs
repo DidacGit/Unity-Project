@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using TMPro;
 
 public class LevelsMenuScript : MonoBehaviour
 {
@@ -12,22 +13,23 @@ public class LevelsMenuScript : MonoBehaviour
     private bool unlockLevel3 = false;
     private bool unlockLevel4 = false;
 
-    // Start is called before the first frame update
+    public GameObject container2, container3, container4;
+
     void Start()
     {
         level = PlayerPrefsManager.getLevel();
         if (level > 1)
         {
             unlockLevel2 = true;
-            // Put the other color to the text
+            container2.SetActive(true);
             if (level > 2)
             {
                 unlockLevel3 = true;
-                // Put the other color to the text
+                container3.SetActive(true);
                 if (level > 3)
                 {
                     unlockLevel4 = true;
-                    // Put the other color to the text
+                    container4.SetActive(true);
                 }
             }
         }

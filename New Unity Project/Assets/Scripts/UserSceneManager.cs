@@ -33,6 +33,7 @@ public class UserSceneManager : MonoBehaviour
     string rootFolder;                                      //Path donde se guardarán las scores
     bool gameSaved = false;                                 //Variable necesaria para que no guarde la nueva score a cada frame
 
+    public int nextLevel = 2;                               
     private void Start()
     {
         //Si estamos desde el editor de Unity cogera el path de la aplicación
@@ -84,6 +85,9 @@ public class UserSceneManager : MonoBehaviour
                 scoresCollection.Save(Path.Combine(rootFolder, "scores.xml"));
                 //Indicamos que ya se ha guardado para que en el siguiente frame no lo vuelva a hacer
                 gameSaved = true;
+
+                if(nextLevel < PlayerPrefsManager.getLevel())
+                    PlayerPrefsManager.setLevel(nextLevel);
             }
             
             if (backGroundMusicMute == false) {
