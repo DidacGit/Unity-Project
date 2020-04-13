@@ -12,6 +12,8 @@ public class SettingsMenuScript : MonoBehaviour
     public Slider slider;
     public Toggle toggle;
     public GameObject settingsMenu;
+    public bool onSettingsScene = false;
+    public AudioSource myAudio;
     
     private void Start()
     {
@@ -30,8 +32,16 @@ public class SettingsMenuScript : MonoBehaviour
         PlayerPrefsManager.setVolume(slider.value);
         try
         {
-            UserSceneManager userSceneManager = FindObjectOfType<UserSceneManager>();
-            userSceneManager.SetOnMusic(slider.value, toggle.isOn);
+            if (!onSettingsScene)
+            {
+                UserSceneManager userSceneManager = FindObjectOfType<UserSceneManager>();
+                userSceneManager.SetOnMusic(slider.value, toggle.isOn);
+            }
+            else
+            {
+                myAudio.volume = slider.value;
+            }
+                
         }
         catch (Exception e)
         {
@@ -48,8 +58,16 @@ public class SettingsMenuScript : MonoBehaviour
 
         try
         {
-            UserSceneManager userSceneManager = FindObjectOfType<UserSceneManager>();
-            userSceneManager.SetOnMusic(slider.value, toggle.isOn);
+            if (!onSettingsScene)
+            {
+                UserSceneManager userSceneManager = FindObjectOfType<UserSceneManager>();
+                userSceneManager.SetOnMusic(slider.value, toggle.isOn);
+            }
+            else
+            {
+                myAudio.mute = toggle.isOn;
+            }
+            
         }
         catch (Exception e)
         {

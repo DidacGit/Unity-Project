@@ -86,7 +86,7 @@ public class UserSceneManager : MonoBehaviour
                 //Indicamos que ya se ha guardado para que en el siguiente frame no lo vuelva a hacer
                 gameSaved = true;
 
-                if(nextLevel < PlayerPrefsManager.getLevel())
+                if(nextLevel > PlayerPrefsManager.getLevel())
                     PlayerPrefsManager.setLevel(nextLevel);
             }
             

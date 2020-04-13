@@ -2431,7 +2431,7 @@ MonoBehaviour:
   started: 0
   gameOver: 0
   timeGame: 0
-  finalTime: 6
+  finalTime: 90
   camera: {fileID: 1678457470}
   colliderPlayer: {fileID: 1313478375}
   wonMenu: {fileID: 196449810}
@@ -2441,6 +2441,7 @@ MonoBehaviour:
   pauseMusic: {fileID: 5309799889179814262, guid: d273eb83202ee85498bc5bec698df135,
     type: 3}
   muteMusic: {fileID: 1617264058}
+  nextLevel: 2
 --- !u!4 &563380121
 Transform:
   m_ObjectHideFlags: 0
@@ -7193,6 +7194,7 @@ MonoBehaviour:
   scoresMenuUI: {fileID: 153467097}
   settingsMenuUI: {fileID: 616020415}
   pauseButton: {fileID: 1395396387}
+  level: LevelBase
 --- !u!1 &1856903727
 GameObject:
   m_ObjectHideFlags: 0
@@ -8342,13 +8344,31 @@ PrefabInstance:
     - target: {fileID: 8757934179484540595, guid: f8f2064298d528b439450f37cd1e2635,
         type: 3}
       propertyPath: enemyList.Array.size
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8757934179484540595, guid: f8f2064298d528b439450f37cd1e2635,
         type: 3}
       propertyPath: enemyList.Array.data[5]
       value: 
       objectReference: {fileID: 4141423415950055544, guid: 8e49a60960a04734093d7ce9d899a3aa,
+        type: 3}
+    - target: {fileID: 8757934179484540595, guid: f8f2064298d528b439450f37cd1e2635,
+        type: 3}
+      propertyPath: enemyList.Array.data[6]
+      value: 
+      objectReference: {fileID: 1542112843390278, guid: ef6ab94c04502497498daa16165ee0bd,
+        type: 3}
+    - target: {fileID: 8757934179484540595, guid: f8f2064298d528b439450f37cd1e2635,
+        type: 3}
+      propertyPath: enemyList.Array.data[7]
+      value: 
+      objectReference: {fileID: 1542112843390278, guid: ef6ab94c04502497498daa16165ee0bd,
+        type: 3}
+    - target: {fileID: 8757934179484540595, guid: f8f2064298d528b439450f37cd1e2635,
+        type: 3}
+      propertyPath: enemyList.Array.data[8]
+      value: 
+      objectReference: {fileID: 1542112843390278, guid: ef6ab94c04502497498daa16165ee0bd,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8f2064298d528b439450f37cd1e2635, type: 3}

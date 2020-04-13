@@ -80,8 +80,10 @@ MonoBehaviour:
   explosionEffect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
     type: 3}
   scoreIncrementator: 50
-  explosionSoundSpace: {fileID: 0}
-  explosionSoundPlayer: {fileID: 0}
+  explosionSoundSpace: {fileID: 3145354796523004984, guid: ec665923f9bcc8c4d99f7b9445f566b0,
+    type: 3}
+  explosionSoundPlayer: {fileID: 9082002734807586233, guid: 5aad4acd5d336ac4ca4021429ab35466,
+    type: 3}
   firstAidkit: {fileID: 7260172747682591191, guid: d58d31ca65dab04489f16b763385da3c,
     type: 3}
   ammunition: {fileID: 4141423415950055544, guid: 8e49a60960a04734093d7ce9d899a3aa,
@@ -92,10 +94,11 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   bulletPrefab: {fileID: 7116272334857267220, guid: 6d0adb4c326bb204383fc75283a45f67,
     type: 3}
-  bulletSpeed: 60
+  bulletSpeed: 50
   firePoint: {fileID: 1555540335}
-  targetTime: 1
+  targetTime: 2
   canShoot: 1
+  randomTimeToShoot: 0
   playerReached: 0
 --- !u!1 &5061709998096897201
 GameObject:

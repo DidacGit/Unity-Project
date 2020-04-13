@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+
     private void Start()
     {
         PlayerPrefsManager.initialize();

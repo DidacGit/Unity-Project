@@ -125,8 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec75c216f2b5e047a95663093e2d3cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  liveTime: 4
-  explosionSound: {fileID: 8300000, guid: 844aaf28ff81a8d469eb92573c227545, type: 3}
+  liveTime: 10
 --- !u!82 &4625417759808837029
 AudioSource:
   m_ObjectHideFlags: 0

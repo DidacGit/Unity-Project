@@ -10,12 +10,13 @@ public class Ship : Enemy
     public Vector3 direction;
 
     public GameObject bulletPrefab;
-    public float bulletSpeed = 60.0f;
+    public float bulletSpeed = 50.0f;
 
     public GameObject firePoint;
     public float targetTime = 0.5f;
     private float myTimer;
     public bool canShoot = false;
+    public bool randomTimeToShoot = false;
     public bool playerReached = false;
     private float yScale;
 
@@ -26,6 +27,8 @@ public class Ship : Enemy
         playerTransform = player.GetComponent<Transform>();
         myTimer = targetTime;
         yScale = transform.localScale.y;
+        if (randomTimeToShoot)
+            targetTime = Random.Range(2,7);
     }
     private void Update()
     {
@@ -68,7 +71,7 @@ public class Ship : Enemy
     {
         GameObject b = Instantiate(bulletPrefab) as GameObject;
         b.transform.position = firePoint.transform.position; // mirar si poner en otro punto 
-        b.transform.rotation = Quaternion.Euler(_rotation);
+        b.transform.rotation = Quaternion.Euler(_rotation.x -90, _rotation.y, _rotation.z);
         b.GetComponent<Rigidbody>().velocity = direction * (-bulletSpeed);
 
     }

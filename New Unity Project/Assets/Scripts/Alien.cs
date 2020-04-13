@@ -35,8 +35,8 @@ public class Alien : Enemy
             //Dirigirse hacia
             direction = transform.position - playerTransform.position;
             direction.Normalize();
-            transform.position = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, transform.position.z),
-                new Vector3(playerTransform.position.x, playerTransform.position.y, transform.position.z), lerpVelocity);
+            /*transform.position = Vector3.Lerp(new Vector3(transform.position.x, transform.position.y, transform.position.z),
+                new Vector3(playerTransform.position.x, playerTransform.position.y, transform.position.z), lerpVelocity); */
 
             //https://www.youtube.com/watch?v=7-8nE9_FwWs TUTORIAL ROTAR DIRECCTION
 
@@ -47,7 +47,7 @@ public class Alien : Enemy
             Vector3 r = new Vector3(0.0f, rotationY, -rotationZ);
             transform.rotation = Quaternion.Euler(r);
 
-            //check if the plalyer it's on my left to fix the bug that makes this prefab to turn down
+            //Check if the plalyer it's on my left to fix the bug that makes this prefab to turn down
             if (playerTransform.position.x < transform.position.x)
                 transform.localScale = new Vector3(transform.localScale.x, -yScale, transform.localScale.z);
             else
@@ -71,7 +71,7 @@ public class Alien : Enemy
     {
         GameObject b = Instantiate(bulletPrefab) as GameObject;
         b.transform.position = firePoint.transform.position; // mirar si poner en otro punto 
-        b.transform.rotation = Quaternion.Euler(_rotation);
+        b.transform.rotation = Quaternion.Euler(_rotation.x - 90, _rotation.y, _rotation.z);
         b.GetComponent<Rigidbody>().velocity = direction * (-bulletSpeed);
 
     }

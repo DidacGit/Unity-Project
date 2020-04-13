@@ -77,10 +77,12 @@ public class PauseMenuScript : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        // TODO: unlock the next level somewhere in this script
         int levels = PlayerPrefsManager.getLevel();
-        //SceneManager.LoadScene("Level" + levels.ToString());
-        SceneManager.LoadScene("LevelsMenu");
+        SceneManager.LoadScene("Level"+ levels);
+    }
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Credits");
     }
     public void ExitGame()
     {
