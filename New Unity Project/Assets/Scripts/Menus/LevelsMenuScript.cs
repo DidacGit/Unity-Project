@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class LevelsMenuScript : MonoBehaviour
 {
+    // Int from 1 to 4. Represents the number of unlocked levels
     public int level = 0;
+    // Represent wether each level is unlocked
     private bool unlockLevel2 = false;
     private bool unlockLevel3 = false;
     private bool unlockLevel4 = false;
