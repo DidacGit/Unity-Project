@@ -6,12 +6,29 @@ using UnityEngine;
 public class LevelsMenuScript : MonoBehaviour
 {
     public int level = 0;
+    private bool unlockLevel2 = false;
+    private bool unlockLevel3 = false;
+    private bool unlockLevel4 = false;
+
     // Start is called before the first frame update
     void Start()
     {
         level = PlayerPrefsManager.getLevel();
-        // Change the title colors here, when the completed levels' data is implemented
-
+        if (level > 1)
+        {
+            unlockLevel2 = true;
+            // Put the other color to the text
+            if (level > 2)
+            {
+                unlockLevel3 = true;
+                // Put the other color to the text
+                if (level > 3)
+                {
+                    unlockLevel4 = true;
+                    // Put the other color to the text
+                }
+            }
+        }
     }
 
     public void LoadLevel1()
@@ -20,19 +37,27 @@ public class LevelsMenuScript : MonoBehaviour
     }
     public void LoadLevel2()
     {
-        //SceneManager.LoadScene("Level2");
+        if (unlockLevel2)
+        {
+            SceneManager.LoadScene("Level2");
+        }
     }
     public void LoadLevel3()
     {
-        //SceneManager.LoadScene("Level3");
+        if (unlockLevel3)
+        {
+            SceneManager.LoadScene("Level3");
+        }
     }
     public void LoadLevel4()
     {
-        //SceneManager.LoadScene("Level4");
+        if (unlockLevel4)
+        {
+            SceneManager.LoadScene("Level4");
+        }
     }
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }
-
 }
