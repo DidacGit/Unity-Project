@@ -19,6 +19,7 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject pauseButton;
     // the level that will rebuild after die
     public string level = "LevelBase";
+
     // Update is called once per frame
     void Update()
     {

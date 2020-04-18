@@ -24,6 +24,7 @@ public class UserSceneManager : MonoBehaviour
     public TMPro.TextMeshProUGUI wonMenuScore;              //Referencia al wonMenuscore que se desplegará en caso de que el usuario quiera ver las scores
     public GameObject wonSound;                             //Prefab que accionará el sonido de victoria
     public GameObject pauseMusic;                           //Prefab que accionará el sonido de pausa
+    public GameObject negrosMusic;
     public AudioSource muteMusic;                           //Variable para parar la musica
     
     bool backGroundMusicMute = false;                       //Variable para limitar que el sonido de win solo suene una vez
@@ -63,6 +64,12 @@ public class UserSceneManager : MonoBehaviour
             player.life = 0;
             gameOver = true;
             menusManager.LoadDiedMenu();
+            if (backGroundMusicMute == false)
+            {
+                muteMusic.mute = true;
+                Instantiate(negrosMusic);
+                backGroundMusicMute = true;
+            }
         }
         if ( timeGame >= finalTime)
         {
